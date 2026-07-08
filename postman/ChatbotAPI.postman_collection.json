@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "AWS RAG Chatbot API",
+    "description": "Postman collection for testing the AWS RAG Chatbot REST API.\n\nReplace {{API_GATEWAY_URL}} with your deployed API Gateway endpoint.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "API_GATEWAY_URL",
+      "value": "https://<your-api-id>.execute-api.<region>.amazonaws.com/dev",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Ask Question",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is Embedded Systems?\"\n}"
+        },
+        "url": {
+          "raw": "{{API_GATEWAY_URL}}/chat",
+          "host": ["{{API_GATEWAY_URL}}"],
+          "path": ["chat"]
+        },
+        "description": "Send a question to the RAG Chatbot and receive a context-aware answer generated from the knowledge base documents."
+      },
+      "response": [
+        {
+          "name": "Successful Response",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"answer\": \"An embedded system is a computer system—a combination of a computer processor, computer memory, and input/output peripheral devices—that has a dedicated function within a larger mechanical or electronic system.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Ask Question - Compiler",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is a compiler?\"\n}"
+        },
+        "url": {
+          "raw": "{{API_GATEWAY_URL}}/chat",
+          "host": ["{{API_GATEWAY_URL}}"],
+          "path": ["chat"]
+        },
+        "description": "Query about compilers to test knowledge base retrieval from technical documents."
+      },
+      "response": []
+    },
+    {
+      "name": "Ask Question - Programming Models",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What are the different models of programs?\"\n}"
+        },
+        "url": {
+          "raw": "{{API_GATEWAY_URL}}/chat",
+          "host": ["{{API_GATEWAY_URL}}"],
+          "path": ["chat"]
+        },
+        "description": "Query about programming models to test multi-concept retrieval."
+      },
+      "response": []
+    }
+  ]
+}
