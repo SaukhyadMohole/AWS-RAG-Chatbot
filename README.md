@@ -127,11 +127,11 @@ AWS-RAG-Chatbot/
 │   └── Project_Report.pdf    # Detailed project report
 │
 ├── screenshots/
+│   ├── aws_console.png       # AWS Console — services overview
 │   ├── s3_bucket.png         # S3 bucket configuration
 │   ├── bedrock_model.png     # Bedrock model access
 │   ├── knowledge_base.png    # Knowledge Base setup
 │   ├── lambda.png            # Lambda function configuration
-│   ├── api_gateway.png       # API Gateway setup
 │   ├── query1.png            # Test query — programming models
 │   ├── query2.png            # Test query — compilers
 │   └── query3.png            # Test query — software tools
@@ -249,6 +249,12 @@ Content-Type: application/json
 > *Screenshots of each AWS service configuration and live test queries.*
 
 <details>
+<summary><strong>☁️ AWS Console — Services Overview</strong></summary>
+<br>
+<img src="screenshots/aws_console.png" alt="AWS Console" width="700"/>
+</details>
+
+<details>
 <summary><strong>🪣 S3 Bucket Configuration</strong></summary>
 <br>
 <img src="screenshots/s3_bucket.png" alt="S3 Bucket" width="700"/>
@@ -270,12 +276,6 @@ Content-Type: application/json
 <summary><strong>⚡ Lambda Function</strong></summary>
 <br>
 <img src="screenshots/lambda.png" alt="Lambda Function" width="700"/>
-</details>
-
-<details>
-<summary><strong>🌐 API Gateway</strong></summary>
-<br>
-<img src="screenshots/api_gateway.png" alt="API Gateway" width="700"/>
 </details>
 
 <details>
